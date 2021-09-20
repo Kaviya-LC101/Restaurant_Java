@@ -8,15 +8,49 @@ public class Menu {
 private ArrayList<MenuItem> menuItem= new ArrayList<>();
 private Date lastUpdated;
 
-    public Menu(ArrayList<MenuItem> aMenuItem, Date aLastUpdated) {
+    public Menu(ArrayList<MenuItem> aMenuItem) {
         this.menuItem = aMenuItem;
-        this.lastUpdated = aLastUpdated;
+        this.lastUpdated = new Date();
     }
-    public Date getLastUpdated(){
-        return getLastUpdated();
+
+    public ArrayList<MenuItem> getMenuItem() {
+        return menuItem;
     }
-    public void setLastUpdated( Date aLastUpdated){
-        lastUpdated=aLastUpdated;
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setMenuItem(ArrayList<MenuItem> menuItem) {
+        this.menuItem = menuItem;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+    //Add Menu Item
+    public void addMenuItem(MenuItem item){
+
+                this.menuItem.add(item);
+                this.lastUpdated = new Date();
+
+
+        }
+
+    // Remove Menu Item
+    public void removeMenuItem(MenuItem item){
+        this.menuItem.remove(item);
+        this.lastUpdated=new Date();
+    }
+    // Print MenuItem
+
+    public void printMenuItem(MenuItem item){
+        System.out.println(item.toString());
+    }
+    public void printMenu(){
+        for(MenuItem item: this.menuItem){
+            System.out.println(item.toString());
+        }
     }
 
 }
